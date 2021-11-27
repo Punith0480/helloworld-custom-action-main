@@ -19,8 +19,8 @@ try {
   var comments = core.getInput('Comments');
   //core.setOutput("comments", comments);
   console.log(`comments ${comments}`);
-  var github_token = core.getInput('GITHUB_TOKEN');
-  console.log(`github_token ${github_token}`);
+  var Github_Token = core.getInput('github_token');
+  console.log(`Github_Token ${Github_Token}`);
   var pr_number = core.getInput('PR_Number');
   console.log(`pr_number ${pr_number}`);
  const url = "https://api.github.com/repos/PunithMohan/helloworld-action/pulls/1/commits";
