@@ -24,10 +24,16 @@ try {
   console.log(`Github_Token ${Github_Token}`);
   var pr_number = core.getInput('PR_Number');
   console.log(`pr_number ${pr_number}`);
-  await octokit.request('GET /repos/{owner}/{repo}/pulls/{pull_number}', {
+  const result = await request("GET /repos/{owner}/{repo}/pulls/{pull_number}", {
+  headers: {
+    authorization: "token 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",
+  },
   owner: 'Punith0480',
   repo: 'helloworld-action-main',
   pull_number: 1
+});
+
+console.log(`${result.data.length} repos found.`);
 })
   /*
  const url = "https://api.github.com/repos/PunithMohan/helloworld-action/pulls/1/commits";
