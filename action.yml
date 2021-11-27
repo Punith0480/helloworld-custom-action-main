@@ -17,7 +17,7 @@ inputs:
     description: 'comment'
     required: true
     default: 'The PR should have less than 10 commits'
- github_token: #id of input
+  github_token: #id of input
     description: 'Default Github token'
     required: true
     default: 'mytoken'
