@@ -1,5 +1,5 @@
 {
-  "name": "helloworld-custom-action",
+  "name": "helloworld-custom-action-main",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PunithMohan/helloworld-custom-action.git"
+    "url": "git+https://github.com/Punith0480/helloworld-custom-action-main.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PunithMohan/helloworld-custom-action.git/issues"
+    "url": "https://github.com/Punith0480/helloworld-custom-action-main.git/issues"
   },
-  "homepage": "https://github.com/PunithMohan/helloworld-custom-action.git#readme"
+  "homepage": "https://github.com/Punith0480/helloworld-custom-action-main.git#readme"
 }
