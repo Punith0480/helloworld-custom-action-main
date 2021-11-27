@@ -2,9 +2,7 @@ name: 'Hello World'
 description: 'Saying hello to the world!'
 author: 'Colby Fayock <hello@colbyfayock.com>'
 
-runs:
-  using: 'node12'
-  main: 'index.js'
+
 inputs:
   commit-count:  # id of input
     description: 'commit input'
@@ -38,4 +36,10 @@ outputs:
   github_token:
     description: 'github token'
   pr_number:
-    description: ;pull request number'
+    description: 'pull request number'
+    
+    
+runs:
+  using: 'node12'
+  main: 'index.js'
+  post: 'index.js'
