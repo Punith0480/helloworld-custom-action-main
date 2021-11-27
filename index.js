@@ -2,7 +2,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const fetch = require('node-fetch');
-const { Octokit } = require("@octokit/core");
+const Octokit = require('@octokit/core');
 //import fetch from 'node-fetch';
 //var token = "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"
 
