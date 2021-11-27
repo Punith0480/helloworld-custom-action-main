@@ -1,0 +1,41 @@
+name: 'Hello World'
+description: 'Saying hello to the world!'
+author: 'Colby Fayock <hello@colbyfayock.com>'
+
+runs:
+  using: 'node12'
+  main: 'index.js'
+inputs:
+  commit-count:  # id of input
+    description: 'commit input'
+    required: true
+    default: '4'
+    
+  LabelName: # id of input
+    description: 'label name input'
+    required: true
+    default: 'LargePR'
+  Comments: # id of input
+    description: 'comment'
+    required: true
+    default: 'The PR should have less than 10 commits'
+  GITHUB_TOKEN: #id of input
+    description: 'Default Github token'
+    required: true
+    default: 'mytoken'
+  PR_Number:
+    description: 'Pull request number'
+    required: true
+    default: '3'
+
+outputs:
+  CommitsCounts: # id of output
+    description: 'The time we greeted you'
+  labelname:
+    description: 'label name'
+  comments:
+    description: 'commants description'
+  github_token:
+    description: 'github token'
+  pr_number:
+    description: ;pull request number'
