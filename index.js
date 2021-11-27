@@ -24,6 +24,8 @@ try {
   console.log(`Github_Token ${Github_Token}`);
   var pr_number = core.getInput('PR_Number');
   console.log(`pr_number ${pr_number}`);
+  async function postData() {
+  // Default options are marked with *
   const result = await request("GET /repos/{owner}/{repo}/pulls/{pull_number}", {
   headers: {
     authorization: "token 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",
@@ -34,7 +36,12 @@ try {
 });
 
 console.log(`${result.data.length} repos found.`);
-})
+}
+  postData()
+  .then(data => {
+    console.log(data); // JSON data parsed by `data.json()` call
+  });
+
   /*
  const url = "https://api.github.com/repos/PunithMohan/helloworld-action/pulls/1/commits";
  console.log(`url ${url}`);
