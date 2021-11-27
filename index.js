@@ -2,6 +2,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const fetch = require('node-fetch');
+const { Octokit } = require("@octokit/core");
 //import fetch from 'node-fetch';
 //var token = "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"
 
@@ -23,6 +24,12 @@ try {
   console.log(`Github_Token ${Github_Token}`);
   var pr_number = core.getInput('PR_Number');
   console.log(`pr_number ${pr_number}`);
+  await octokit.request('GET /repos/{owner}/{repo}/pulls/{pull_number}', {
+  owner: 'Punith0480',
+  repo: 'helloworld-action-main',
+  pull_number: 1
+})
+  /*
  const url = "https://api.github.com/repos/PunithMohan/helloworld-action/pulls/1/commits";
  console.log(`url ${url}`);
  const options = {
@@ -35,7 +42,8 @@ try {
 fetch(url, options)
   .then( res => res.json() )
   .then( data => console.log(data) );
-  
+  */
+  /*
   async function postData(url = '' , data = {}) {
   // Default options are marked with *
   const response = await fetch(url, {
@@ -57,6 +65,7 @@ fetch(url, options)
   .then(data => {
     console.log(data); // JSON data parsed by `data.json()` call
   });
+  */
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
