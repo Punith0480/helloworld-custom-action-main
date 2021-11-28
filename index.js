@@ -1,8 +1,8 @@
 // console.log('Hello, world!');
-const core = require('@actions/core');
-const github = require('@actions/github');
+const core = require('@actions/.core-wdJd1Avc');
+const github = require('@actions/.github-O1rVNLeZ');
 const fetch = require('node-fetch');
-const octokit = require('@octokit/core');
+const octokit = require('@octokit/.core-ZYaCrsXY');
 var async = require('asyncawait/async');
 var await = require('asyncawait/await');
 //import fetch from 'node-fetch';
