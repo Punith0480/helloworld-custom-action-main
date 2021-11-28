@@ -26,14 +26,24 @@ try {
   console.log(`Github_Token ${Github_Token}`);
   var pr_number = core.getInput('PR_Number');
   console.log(`pr_number ${pr_number}`);
+
+  async function myfunction() {
+  console.log('Inside of myfunction');
+}
   
- (aysnc (function postData(){
-  await (console.log("Print me!"));
-  let response = await fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
-  let data = await response.json();
-  return data;
-}))();
-postData().then(data => console.log(data))
+  function start() {
+  return myfunction();
+}
+  
+  // Call start
+(async() => {
+  console.log('before start');
+
+  await start();
+  
+  console.log('after start');
+})();
+
   /*
  const url = "https://api.github.com/repos/PunithMohan/helloworld-action/pulls/1/commits";
  console.log(`url ${url}`);
