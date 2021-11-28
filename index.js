@@ -42,10 +42,12 @@ try {
 (async() => {
   console.log('before start');
 
-  await start();
+  await start().then(data => console.log(data));
   
   console.log('after start');
 })();
+  
+ //async().then(data => console.log(data))
 
   /*
  const url = "https://api.github.com/repos/PunithMohan/helloworld-action/pulls/1/commits";
