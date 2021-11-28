@@ -33,6 +33,9 @@ try {
   
   function start() {
   return myfunction();
+  let response = await fetch(https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
+  let data = await response.json();
+  return data;
 }
   
   // Call start
