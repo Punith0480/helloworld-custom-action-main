@@ -44,7 +44,7 @@ try {
 (async() => {
   console.log('before start');
 
-  myfunction();
+  console.log(myfunction());
   
   console.log('after start');
 })();
