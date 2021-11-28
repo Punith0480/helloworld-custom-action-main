@@ -33,8 +33,8 @@ try {
   
   function start() {
   return myfunction();
-  let response = await fetch(https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
-  let data = await response.json();
+  let response = fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
+  let data = response.json();
   return data;
 }
   
