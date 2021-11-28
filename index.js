@@ -29,7 +29,7 @@ try {
 
   async function myfunction() {
   console.log('Inside of myfunction');
-  const response = await fetch(GET 'https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
+  const response = await octokit.request(GET 'https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
   console.log(`response ${response}`);
   let data = await response.json();
   console.log(`dat ${data}`);
