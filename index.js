@@ -32,7 +32,7 @@ try {
   let response = await fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
   let data = await response.json();
   return data;
-}
+}();
 postData().then(data => console.log(data))
   /*
  const url = "https://api.github.com/repos/PunithMohan/helloworld-action/pulls/1/commits";
