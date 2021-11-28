@@ -29,8 +29,8 @@ try {
 
   async function myfunction() {
   console.log('Inside of myfunction');
-  let response = fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
-  let data = response.json();
+  const response = fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
+  const data = response.json();
   return data;
 }
   
