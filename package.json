@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/Punith0480/helloworld-custom-action-main.git/issues"
   },
-  "homepage": "https://github.com/Punith0480/helloworld-custom-action-main.git#readme"
+  "homepage": "https://github.com/Punith0480/helloworld-custom-action-main.git#readme",
+  "dependencies": {
+    "asyncawait": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0"
+  }
 }
