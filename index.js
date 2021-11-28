@@ -31,7 +31,9 @@ try {
   console.log('Inside of myfunction');
   const response = await fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
   console.log(`response ${response}`);
-  //return data;
+  let data = await response.json();
+  console.log(`dat ${data}`);
+  return data;
 }
   
   
