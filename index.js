@@ -29,13 +29,14 @@ try {
 
   async function myfunction() {
   console.log('Inside of myfunction');
+  let response = fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
+  let data = response.json();
+  return data;
 }
   
   function start() {
   return myfunction();
-  let response = fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
-  let data = response.json();
-  return data;
+  
 }
   
   // Call start
