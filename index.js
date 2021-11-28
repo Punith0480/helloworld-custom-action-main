@@ -34,16 +34,12 @@ try {
   return data;
 }
   
-  function start() {
-  return myfunction();
-  
-}
   
   // Call start
 (async() => {
   console.log('before start');
 
-  await start().then(data => console.log(data));
+  await myfunction().then(data => console.log(data));
   
   console.log('after start');
 })();
