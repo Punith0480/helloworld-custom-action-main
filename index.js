@@ -44,7 +44,7 @@ try {
 (async() => {
   console.log('before start');
 
-  myfunction().then( res => res.json());
+  myfunction();
   
   console.log('after start');
 })();
