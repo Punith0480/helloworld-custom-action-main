@@ -26,9 +26,10 @@ try {
   console.log(`pr_number ${pr_number}`);
   async function postData() {
   // Default options are marked with *
-  const result = await request("GET /repos/{owner}/{repo}/pulls/{pull_number}", {
+  //const result = await request("GET /repos/{owner}/{repo}/pulls/{pull_number}", {
+    let response = await fetch("GET /repos/{owner}/{repo}/pulls/{pull_number}", {
   headers: {
-    authorization: "token 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",
+    authorization: "token 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",
   },
   owner: 'Punith0480',
   repo: 'helloworld-action-main',
