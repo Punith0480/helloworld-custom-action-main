@@ -39,7 +39,7 @@ try {
 (async() => {
   console.log('before start');
 
-  await myfunction().then(data => console.log(data));
+  await myfunction();
   
   console.log('after start');
 })();
