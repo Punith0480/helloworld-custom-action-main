@@ -27,7 +27,7 @@ try {
   async function postData() {
   // Default options are marked with *
   //const result = await request("GET /repos/{owner}/{repo}/pulls/{pull_number}", {
-    let response = await fetch("GET /repos/{owner}/{repo}/pulls/{pull_number}", {
+    let response = await fetch("GET https://api.github.com/repos/{owner}/{repo}/pulls/{pull_number}", {
   owner: 'Punith0480',
   repo: 'helloworld-action-main',
   pull_number: 1
