@@ -43,7 +43,8 @@ try {
   // Call start
 (async() => {
   console.log('before start');
-  myfunction().then(data => console.log(JSON.stringify(data)));
+  var Data = myfunction().then(data => console.log(data));
+  console.log(JSON.stringify(Data, undefined, 2));
   console.log('after start');
 })();
   
