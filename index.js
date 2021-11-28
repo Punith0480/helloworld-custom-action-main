@@ -30,8 +30,8 @@ try {
   async function myfunction() {
   console.log('Inside of myfunction');
   const response = fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
-  const data = response.json();
-  return data;
+  console.log(`response ${response}`);
+  //return data;
 }
   
   
