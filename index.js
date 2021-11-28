@@ -3,6 +3,8 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fetch = require('node-fetch');
 const octokit = require('@octokit/core');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 //import fetch from 'node-fetch';
 //var token = "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"
 
@@ -26,8 +28,9 @@ try {
   console.log(`pr_number ${pr_number}`);
   
  aysnc function postData(){
+  await (console.log("Print me!"));
   let response = await fetch('https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
-  let data = await response.json()
+  let data = await response.json();
   return data;
 }
 postData().then(data => console.log(data))
