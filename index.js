@@ -32,7 +32,7 @@ try {
   console.log('Inside of myfunction');
   const response = await octokitRequest.request('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1/commits');
  // console.log(`response ${response}`);
-  data1 = console.log(JSON.stringify(response))
+  data1 = JSON.stringify(response);
  // let data = await response.json();
  // console.log(`dat ${data}`);
   console.log(`data1 ${data1}`);
