@@ -35,7 +35,7 @@ try {
   data1 = JSON.stringify(response);
  // let data = await response.json();
  // console.log(`dat ${data}`);
-  console.log(`data1 ${data1}`);
+  //console.log(`data1 ${data1}`);
   return data1;
 }
   
