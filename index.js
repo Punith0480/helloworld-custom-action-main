@@ -5,6 +5,7 @@ const fetch = require('node-fetch');
 const octokit = require('@octokit/core');
 var async = require('asyncawait/async');
 var await = require('asyncawait/await');
+const octokitRequest = require('@octokit/request');
 //import fetch from 'node-fetch';
 //var token = "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"
 
@@ -29,7 +30,7 @@ try {
 
   async function myfunction() {
   console.log('Inside of myfunction');
-  const response = await octokit.request('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
+  const response = await octokitRequest('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
   console.log(`response ${response}`);
   let data = await response.json();
   console.log(`dat ${data}`);
