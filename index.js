@@ -30,7 +30,7 @@ try {
 
   async function myfunction() {
   console.log('Inside of myfunction');
-  const response = await octokitRequest.request('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1');
+  const response = await octokitRequest.request('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1/commits');
   console.log(`response ${response}`);
   let data = await response.json();
   console.log(`dat ${data}`);
@@ -42,7 +42,7 @@ try {
 (async() => {
   console.log('before start');
 
-  myfunction();
+  myfunction().then( res => res.json());
   
   console.log('after start');
 })();
