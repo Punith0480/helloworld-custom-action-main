@@ -72,9 +72,15 @@ async function applyLabel() {
   
  async function applyCommentsAfterLabel() {
    console.log('Inside Apply comments label function');
-   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/${gitHubRepository}/issues/3/comments', {
+   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/{github_repo}/issues/3/comments', {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
+                                                                 },
+                                                                 params: {
+                                                                 github_repo: {
+                                                                   required: true,
+                                                                   type: `${gitHubRepository}`,
+                                                                 },
                                                                  },
                                                                    body: `${comments}`,
                                                                    
