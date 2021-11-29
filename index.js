@@ -35,7 +35,7 @@ try {
   let repoName= `${gitHubRepository}`;
   let result=url.concat("", repoName);
   console.log(result);
-  const response = await octokitRequest.request('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/3/commits');
+  const response = await octokitRequest.request(`GET `${repoName}`/pulls/3/commits`);
  // console.log(`response ${response}`);
   data1 = JSON.stringify(response);
  // let data = await response.json();
