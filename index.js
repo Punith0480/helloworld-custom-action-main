@@ -43,7 +43,7 @@ try {
    console.log('Inside create lable function');
    const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/Punith0480/helloworld-action-main/labels', {
                                                                 headers: {
-                                                                 authorization: "token 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",
+                                                                 authorization: "token ${Github_Token}",
                                                                  },
                                                                    name:  'LargePR',
                                                                   });
