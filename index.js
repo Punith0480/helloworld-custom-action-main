@@ -35,7 +35,7 @@ try {
   
   async function GetCommitCountByPR() {
   console.log('Inside of myfunction');
-  const response = await octokitRequest.request('GET https://api.github.com/repos/${gitRepoOutPut}/pulls/1/commits');
+  const response = await octokitRequest.request('GET https://api.github.com/repos/`${gitRepoOutPut}`/pulls/1/commits');
  // console.log(`response ${response}`);
   data1 = JSON.stringify(response);
  // let data = await response.json();
@@ -46,7 +46,7 @@ try {
  
   async function createLabel() {
    console.log('Inside create lable function');
-   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/${gitRepoOutPut}/labels', {
+   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/`${gitRepoOutPut}`/labels', {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
@@ -58,7 +58,7 @@ try {
  
 async function applyLabel() {
    console.log('Inside Apply lable function');
-   const responseOfCreateLabel = await octokitRequest.request('PUT https://api.github.com/repos/${gitRepoOutPut}/issues/1/labels', {
+   const responseOfCreateLabel = await octokitRequest.request('PUT https://api.github.com/repos/`${gitRepoOutPut}`/issues/1/labels', {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
@@ -70,7 +70,7 @@ async function applyLabel() {
   
  async function applyCommentsAfterLabel() {
    console.log('Inside Apply comments label function');
-   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/${gitRepoOutPut}/issues/1/comments', {
+   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/`${gitRepoOutPut}`/issues/1/comments', {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
