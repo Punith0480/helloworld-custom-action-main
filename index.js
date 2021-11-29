@@ -34,7 +34,10 @@ try {
   var gitRepoOutPut = core.setOutput("gitHubRepository", gitHubRepository);
   
   async function GetCommitCountByPR() {
-  console.log('Inside of myfunction');
+  let url="https://api.github.com/repos/";
+  let repoName=`${gitRepoOutPut}`;
+  let result=url.concat("", repoName);
+  console.log(`Inside of myfunction ${result}`);
   const response = await octokitRequest.request('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/3/commits');
  // console.log(`response ${response}`);
   data1 = JSON.stringify(response);
