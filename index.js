@@ -30,11 +30,13 @@ try {
    console.log(`gitHubRepository ${gitHubRepository}`);
  // var gitRepoOutPut = core.setOutput("gitHubRepository", gitHubRepository);
   
-  async function GetCommitCountByPR() {
   let url="https://api.github.com/repos/";
   let repoName= `${gitHubRepository}`;
   let result=url.concat("", repoName);
   console.log(result);
+  
+  async function GetCommitCountByPR() {
+  
   const response = await octokitRequest.request('GET ${result}/pulls/3/commits');
  // console.log(`response ${response}`);
   data1 = JSON.stringify(response);
@@ -46,7 +48,7 @@ try {
  
   async function createLabel() {
    console.log('Inside create lable function');
-   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/Punith0480/helloworld-action-main/labels', {
+   const responseOfCreateLabel = await octokitRequest.request('POST ${result}/labels', {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
