@@ -72,11 +72,9 @@ async function applyLabel() {
   
  async function applyCommentsAfterLabel() {
    console.log('Inside Apply comments label function');
-   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/Punith0480/helloworld-action-main/issues/{issue_number}/comments', {
+   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/Punith0480/helloworld-action-main/issues/3/comments', {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
-                                                                 },
-                                                                 issue_number: 3,                                                                 
                                                                  },
                                                                  body: `${comments}`,
                                                                    
