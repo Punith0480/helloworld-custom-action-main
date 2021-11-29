@@ -57,7 +57,7 @@ async function applyLabel() {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
-                                                                   labels: 'LargePR',
+                                                                   labels: ['LargePR'],
                                                                   });
     data3 = JSON.stringify(responseOfCreateLabel);
     return data3;
