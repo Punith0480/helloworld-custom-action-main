@@ -28,7 +28,7 @@ try {
   var pr_number = core.getInput('PR_Number');
   console.log(`pr_number ${pr_number}`);
 
-  async function myfunction() {
+  async function GetCommitCountByPR() {
   console.log('Inside of myfunction');
   const response = await octokitRequest.request('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1/commits');
  // console.log(`response ${response}`);
@@ -52,7 +52,7 @@ try {
   }        
  
 async function applyLabel() {
-   console.log('Inside create lable function');
+   console.log('Inside Apply lable function');
    const responseOfCreateLabel = await octokitRequest.request('PUT https://api.github.com/repos/Punith0480/helloworld-action-main/issues/1/labels', {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
@@ -62,10 +62,22 @@ async function applyLabel() {
     data3 = JSON.stringify(responseOfCreateLabel);
     return data3;
 }
+  
+ async function applyCommentsAfterLabel() {
+   console.log('Inside Apply comments label function');
+   const responseOfCreateLabel = await octokitRequest.request('PUT https://api.github.com/repos/Punith0480/helloworld-action-main/issues/1/comments', {
+                                                                headers: {
+                                                                 authorization: `token ${Github_Token}`,
+                                                                 },
+                                                                   body: '${comments}',
+                                                                  });
+    data3 = JSON.stringify(responseOfCreateLabel);
+    return data4;
+}
   // Call start
 (async() => {
   console.log('start of myfunction');
-  var Data = myfunction().then(data => console.log(data));
+  var Data = GetCommitCountByPR().then(data => console.log(data));
   console.log(JSON.stringify(Data));
   console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
@@ -73,6 +85,9 @@ async function applyLabel() {
   console.log('start of apply label function');
   var Data3 = applyLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data3));
+  var Data4 = applyCommentsAfterLabel().then(data => console.log(data));
+  console.log(JSON.stringify(Data4));
+  
   console.log('End of fuction');
 })();
   
