@@ -61,6 +61,7 @@ async function applyLabel() {
                                                                   });
     data3 = JSON.stringify(responseOfCreateLabel);
     return data3;
+}
   // Call start
 (async() => {
   console.log('start of myfunction');
