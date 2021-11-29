@@ -28,7 +28,10 @@ try {
   console.log(`Github_Token ${Github_Token}`);
   var pr_number = core.getInput('PR_Number');
   console.log(`pr_number ${pr_number}`);
-
+  
+   var gitHubRepository = core.getInput('GitHubRepository');
+   console.log(`gitHubRepository ${gitHubRepository}`);
+  
   async function GetCommitCountByPR() {
   console.log('Inside of myfunction');
   const response = await octokitRequest.request('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/1/commits');
