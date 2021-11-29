@@ -32,7 +32,7 @@ try {
   
   async function GetCommitCountByPR() {
   let url="https://api.github.com/repos/";
-  let repoName=`${gitRepoOutPut}`;
+  let repoName= gitRepoOutPut;
   let result=url.concat("", repoName);
   console.log(result);
   const response = await octokitRequest.request('GET https://api.github.com/repos/Punith0480/helloworld-action-main/pulls/3/commits');
