@@ -69,7 +69,7 @@ async function applyLabel() {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
-                                                                   body: '${comments}',
+                                                                   body: `${comments}`,
                                                                   });
     data3 = JSON.stringify(responseOfCreateLabel);
     return data4;
