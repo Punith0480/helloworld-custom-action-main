@@ -17,9 +17,10 @@ try {
   //core.setOutput("CommitsCounts", CommitsCounts);
   //console.log(`Commits Count ${CommitsCounts}`)
   var labelName = core.getInput('LabelName');
+  console.log(`label name ${labelName}`)
   //var labelname = labelName;
   //core.setOutput("labelname", labelname);
-  console.log(`Commit Count ${labelname}`);
+  console.log(`Commit Count ${CommitsCounts}`);
   var comments = core.getInput('Comments');
   //core.setOutput("comments", comments);
   console.log(`comments ${comments}`);
