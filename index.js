@@ -49,7 +49,18 @@ try {
                                                                   });
     data2 = JSON.stringify(responseOfCreateLabel);
     return data2;
-  }                                                            
+  }        
+ 
+async function applyLabel() {
+   console.log('Inside create lable function');
+   const responseOfCreateLabel = await octokitRequest.request('PUT https://api.github.com/repos/Punith0480/helloworld-action-main/issues/1/labels', {
+                                                                headers: {
+                                                                 authorization: `token ${Github_Token}`,
+                                                                 },
+                                                                   labels: 'LargePR',
+                                                                  });
+    data3 = JSON.stringify(responseOfCreateLabel);
+    return data3;
   // Call start
 (async() => {
   console.log('start of myfunction');
@@ -58,6 +69,9 @@ try {
   console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data2));
+  console.log('start of apply label function');
+  var Data3 = applyLabel().then(data => console.log(data));
+  console.log(JSON.stringify(Data3));
   console.log('End of fuction');
 })();
   
