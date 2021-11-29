@@ -39,7 +39,7 @@ try {
   return data1;
 }
  
-  asyn function createLabel() {
+  async function createLabel() {
    console.log('Inside create lable function');
    const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/Punith0480/helloworld-action-main/labels', {
                                                                name: 'LargePR'});
