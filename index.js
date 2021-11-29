@@ -45,9 +45,9 @@ try {
                                                                 headers: {
                                                                  authorization: "token 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",
                                                                  },
-                                                                 {
-                                                                   name: 'LargePR'
-                                                                  },
+                            
+                                                                   name:  'LargePR',
+                                                                  
                                                                   });
     data2 = JSON.stringify(responseOfCreateLabel);
     return data2;
