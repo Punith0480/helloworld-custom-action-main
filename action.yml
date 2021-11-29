@@ -1,6 +1,6 @@
 name: 'Hello World'
 description: 'Saying hello to the world!'
-author: 'Colby Fayock <hello@colbyfayock.com>'
+author: 'Praveen and Punith'
 
 
 inputs:
@@ -25,6 +25,11 @@ inputs:
     description: 'Pull request number'
     required: true
     default: '3'
+  GitHubRepository: # id of input
+    description: 'fetch deafult git hub repo'
+    required: true
+    default: 'default repo'
+
 
 outputs:
   CommitsCounts: # id of output
