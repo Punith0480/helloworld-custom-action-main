@@ -42,6 +42,9 @@ outputs:
     description: 'github token'
   pr_number:
     description: 'pull request number'
+  gitHubRepository:
+    description: 'fetch default repo'
+  
     
     
 runs:
