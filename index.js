@@ -16,8 +16,8 @@ try {
   var CommitsCounts = commitCount;
   //core.setOutput("CommitsCounts", CommitsCounts);
   //console.log(`Commits Count ${CommitsCounts}`)
-  const labelName = core.getInput('LabelName');
-  var labelname = labelName;
+  var labelName = core.getInput('LabelName');
+  //var labelname = labelName;
   //core.setOutput("labelname", labelname);
   console.log(`Commit Count ${labelname}`);
   var comments = core.getInput('Comments');
@@ -45,7 +45,7 @@ try {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
-                                                                   name:  'LargePR',
+                                                                   name:  `${labelName}`,
                                                                   });
     data2 = JSON.stringify(responseOfCreateLabel);
     return data2;
@@ -57,7 +57,7 @@ async function applyLabel() {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
-                                                                   labels: ['LargePR'],
+                                                                   labels: [`${labelName}`],
                                                                   });
     data3 = JSON.stringify(responseOfCreateLabel);
     return data3;
