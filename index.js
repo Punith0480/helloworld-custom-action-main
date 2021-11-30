@@ -18,7 +18,7 @@ try {
   //var labelname = labelName;
   //core.setOutput("labelname", labelname);
   console.log(`Commit Count ${CommitsCounts}`);
-  var comments = core.getInput('Comments');
+  var comments = core.getInput('Comment');
   //core.setOutput("comments", comments);
   console.log(`comments ${comments}`);
   var Github_Token = core.getInput('github_token');
