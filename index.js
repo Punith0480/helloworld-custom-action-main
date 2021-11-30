@@ -7,17 +7,15 @@ var await = require('asyncawait/await');
 const octokitRequest = require('@octokit/request');
 
 try {
-  // `who-to-greet` input defined in action metadata file
+  // `commit-count` input defined in action metadata file
   const commitCount = core.getInput('commit-count');
   console.log(`Commit Count ${commitCount}`);
-  var CommitsCounts = commitCount;
-  //core.setOutput("CommitsCounts", CommitsCounts);
-  //console.log(`Commits Count ${CommitsCounts}`)
+  //var CommitsCounts = commitCount;
   var labelName = core.getInput('LabelName');
   console.log(`label name ${labelName}`)
   //var labelname = labelName;
   //core.setOutput("labelname", labelname);
-  console.log(`Commit Count ${CommitsCounts}`);
+  //console.log(`Commit Count ${commitCount}`);
   var comments = core.getInput('Comment');
   //core.setOutput("comments", comments);
   console.log(`comments ${comments}`);
@@ -55,7 +53,7 @@ try {
      var len = searchString.length;
      console.log(`${len}`);
  
-  return res;
+  return string1;
 }
  
   async function createLabel() {
@@ -101,17 +99,6 @@ async function applyLabel() {
 (async() => {
   console.log('start of GetCommitCountsByPR function');
   var Data = GetCommitCountByPR().then(data => console.log(data));
-  //test 1
-  var string1 = JSON.stringify(Data)
-   const parsed = JSON.parse(string1);
-           
-      console.log(`MyParsed ${parsed}`);
-    const searchString = parsed.filter( word => word == `parents`);
-     var len = searchString.length;
-     console.log(len);
- 
-   console.log(`Myarraydata ${searchString}`);
-  //test1 end
   console.log(JSON.stringify(Data));
   console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
