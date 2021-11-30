@@ -95,6 +95,11 @@ async function applyLabel() {
 (async() => {
   console.log('start of myfunction');
   var Data = GetCommitCountByPR().then(data => console.log(data));
+  
+  const searchString = Data.filter( word => word == 'parents');
+  var len = searchString.length;
+  console.log(len);
+  
   console.log(JSON.stringify(Data));
   console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
