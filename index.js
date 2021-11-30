@@ -51,9 +51,13 @@ try {
  // let data = await response.json();
  // console.log(`dat ${data}`);
   //console.log(`data1 ${data1}`);
-   var obj=JSON.parse(data1);
-    console.log(`jSONDATA ${obj}`);
-     
+  // var obj=JSON.parse(data1);
+    //console.log(`jSONDATA ${obj}`);
+  let wholeArray = Object.keys(data1).map(key => data1[key]);
+  console.log(wholeArray);
+  var searchString = wholeArray.filter(word => word === 'parents');
+  var len = searchString.length;
+  console.log(len); 
    
   return data1;
 }
@@ -103,11 +107,7 @@ async function applyLabel() {
   var Data = GetCommitCountByPR().then(data => console.log(data));
   //var itemsArray = Array.from(Data);
   //var searchString = JSON.stringify(Data).filter( word => word == 'parents');
-  let wholeArray = Object.keys(Data).map(key => Data[key]);
-  console.log(wholeArray);
-  var searchString = wholeArray.filter(word => word === 'parents');
-  var len = searchString.length;
-  console.log(len);
+  
   console.log(JSON.stringify(Data));
   console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
