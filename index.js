@@ -39,7 +39,7 @@ try {
  
   async function GetCommitCountByPR() {
   
-  const response = await octokitRequest.request('GET ${urlAndRepoName}/pulls/13/commits');
+  const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/13/commits`);
  // console.log(`response ${response}`);
   data1 = JSON.stringify(response);
  // let data = await response.json();
@@ -64,7 +64,7 @@ try {
  
 async function applyLabel() {
    console.log('Inside Apply lable function');
-   const responseOfCreateLabel = await octokitRequest.request('PUT ${urlAndRepoName}/issues/13/labels', {
+   const responseOfCreateLabel = await octokitRequest.request(`PUT ${urlAndRepoName}/issues/13/labels`, {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
@@ -77,7 +77,7 @@ async function applyLabel() {
   
  async function applyCommentsAfterLabel() {
    console.log('Inside Apply comments label function');
-   const responseOfCreateLabel = await octokitRequest.request('POST ${urlAndRepoName}/issues/13/comments', {
+   const responseOfCreateLabel = await octokitRequest.request(`POST ${urlAndRepoName}/issues/13/comments`, {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
