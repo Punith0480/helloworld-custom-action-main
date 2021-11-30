@@ -13,7 +13,7 @@ inputs:
     description: 'label name input'
     required: true
     default: 'LargePR'
-  Comments: # id of input
+  Comment: # id of input
     description: 'comment'
     required: true
     default: 'The PR should have less than 10 commits'
