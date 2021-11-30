@@ -46,7 +46,7 @@ try {
  // console.log(`dat ${data}`);
   //console.log(`data1 ${data1}`);
    var obj=JSON.parse(data1);
-    console.log(obj.parents);
+    console.log(`jSONDATA ${obj}`);
      
    
   return data1;
