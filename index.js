@@ -49,8 +49,9 @@ try {
 }
  
   async function createLabel() {
+   // https://api.github.com/repos/Punith0480/helloworld-action-main
    console.log('Inside create lable function');
-   const responseOfCreateLabel = await octokitRequest.request('POST https://api.github.com/repos/Punith0480/helloworld-action-main/labels', {
+   const responseOfCreateLabel = await octokitRequest.request(`POST ${urlAndRepoName}/labels`, {
                                                                 headers: {
                                                                  authorization: `token ${Github_Token}`,
                                                                  },
