@@ -47,7 +47,7 @@ try {
   
   const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`);
  // console.log(`response ${response}`);
-  var data1 = JSON.parse(response);
+  //var data1 = JSON.parse(response);
  // let data = await response.json();
  // console.log(`dat ${data}`);
   //console.log(`data1 ${data1}`);
@@ -55,8 +55,8 @@ try {
     //console.log(`jSONDATA ${obj}`);
  // var obj = JSON.parse(data1);
             var res = [];
-            for(var i in data1)
-                res.push(data1[i]);
+            for(var i in response)
+                res.push(response[i]);
        console.log(`${res}`);
    
   return data1;
