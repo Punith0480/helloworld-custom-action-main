@@ -1,4 +1,4 @@
-name: Hello World
+name: labeler
 
 on: [push, pull_request]
 
