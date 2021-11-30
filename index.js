@@ -47,9 +47,9 @@ try {
     array.push(response);
   var arryList= Array.isArray(array);
   console.log(`arryList ${arryList}`);
-   //const searchString = arryList.filter( word => word == 'parents');
-    // var len = searchString.length;
-     //console.log(`MyParsed ${len}`);
+   const searchString = array.filter( word => word == 'parents');
+   var len = searchString.length;
+   console.log(`MyParsed ${len}`);
  
   return string1;
 }
