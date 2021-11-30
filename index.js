@@ -47,15 +47,16 @@ try {
     array.push(response);
   var arryList= Array.isArray(array);
   console.log(`arryList ${arryList}`);
-    var jSONArray=JSON.parse(JSON.stringify(array));
-    for(key in jSONArray){
-      if(jSONArray.hasOwnProperty(key)){
-      console.log("%c "+key + " = jSONArray[key]");
-      }
+    var jSONArray=JSON.parse(JSON.stringify(array)) | jq '.status';
+    //for(key in jSONArray){
+     // if(jSONArray.hasOwnProperty(key)){
+     // console.log(`${jSONArray[key]}");
+     // if(jSONArray[key] == "status")
+     // }
     }
    const searchString = array.filter( word => word.data == 'parents');
    var len = searchString.length;
-   console.log(`MyParsed ${len}`);
+   console.log(`MyParsed ${jSONArray}`);
     
      console.log(`jSONArray ${searchString}`);
  
