@@ -48,7 +48,7 @@ try {
   var arryList= Array.isArray(array);
   console.log(`arryList ${arryList}`);
     var jSONArray=JSON.parse(JSON.stringify(array));
-   const searchString = array.filter( word => word.includes == 'parents');
+   const searchString = array.filter( word => word.data == 'parents');
    var len = searchString.length;
    console.log(`MyParsed ${len}`);
     
