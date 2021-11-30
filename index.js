@@ -101,12 +101,13 @@ async function applyLabel() {
 (async() => {
   console.log('start of myfunction');
   var Data = GetCommitCountByPR().then(data => console.log(data));
-  var itemsArray = Array.from(Data);
+  //var itemsArray = Array.from(Data);
   //var searchString = JSON.stringify(Data).filter( word => word == 'parents');
-  var searchString = itemsArray.filter(word => word === 'parents');
+  let wholeArray = Object.keys(Data).map(key => Data[key]);
+  console.log(wholeArray);
+  var searchString = wholeArray.filter(word => word === 'parents');
   var len = searchString.length;
   console.log(len);
-  
   console.log(JSON.stringify(Data));
   console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
