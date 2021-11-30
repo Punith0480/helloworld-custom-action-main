@@ -102,7 +102,7 @@ async function applyLabel() {
   console.log('start of myfunction');
   var Data = GetCommitCountByPR().then(data => console.log(data));
   
-  const searchString = Data.filter( word => word == 'parents');
+  var searchString = JSON.stringify(Data).filter( word => word == 'parents');
   var len = searchString.length;
   console.log(len);
   
