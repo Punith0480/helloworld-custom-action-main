@@ -59,7 +59,7 @@ try {
                 res.push(response[i]);
        console.log(`${res}`);
    
-  return data1;
+  return res;
 }
  
   async function createLabel() {
