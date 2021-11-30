@@ -36,6 +36,12 @@ try {
   console.log(urlAndRepoName);
   let pr_Number=`${pr_number}`;
   console.log(pr_Number);
+  
+  var string = [ 'spray', 'spray', 'spray', 'elite']
+
+  const searchString = string.filter( word => word == 'spray');
+  var len = searchString.length;
+  console.log(len);
  
   async function GetCommitCountByPR() {
   
