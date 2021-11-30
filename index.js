@@ -34,7 +34,7 @@ try {
   let repoName= `${gitHubRepository}`;
   let urlAndRepoName=url.concat("", repoName);
   console.log(urlAndRepoName);
-  let pr_Number=13;
+  let pr_Number=`${pr_number}`;
   console.log(pr_Number);
  
   async function GetCommitCountByPR() {
