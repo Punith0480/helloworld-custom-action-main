@@ -48,6 +48,11 @@ try {
   var arryList= Array.isArray(array);
   console.log(`arryList ${arryList}`);
     var jSONArray=JSON.parse(JSON.stringify(array));
+    for(key in jSONArray){
+      if(jSONArray.hasOwnProperty(key)){
+      console.log("%c "+key + " = jSONArray[key]");
+      }
+    }
    const searchString = array.filter( word => word.data == 'parents');
    var len = searchString.length;
    console.log(`MyParsed ${len}`);
