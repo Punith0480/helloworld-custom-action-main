@@ -45,8 +45,8 @@ try {
  // let data = await response.json();
  // console.log(`dat ${data}`);
   //console.log(`data1 ${data1}`);
-   var jsonParse=JSON.parse(data1).filter(({parents}) => parents == 'parents');
-    console.log(`jsonData ${jsonParse}`);
+   var obj=JSON.parse(data1);
+    console.log(obj.parents);
      
    
   return data1;
