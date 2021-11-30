@@ -43,9 +43,11 @@ try {
   var string1 = JSON.stringify(response)
   // const parsed = JSON.parse(string1);          
    // console.log(`MyParsed ${parsed}`);
-   const searchString = string1.filter( word => word == 'parents');
-     var len = searchString.length;
-     console.log(`MyParsed ${len}`);
+  var arryList= Array.prototype.slice.call(`${response});
+  console.log(`arryList ${arryList}`);
+   //const searchString = arryList.filter( word => word == 'parents');
+    // var len = searchString.length;
+     //console.log(`MyParsed ${len}`);
  
   return string1;
 }
