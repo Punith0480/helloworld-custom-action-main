@@ -47,7 +47,8 @@ try {
     array.push(response);
   var arryList= Array.isArray(array);
   console.log(`arryList ${arryList}`);
-    var jSONArray=JSON.parse(JSON.stringify(array)) | jq '.status';
+    var jSONArray=JSON.parse(JSON.stringify(array));
+    var status= jSONArray | jq '.status'
     //for(key in jSONArray){
      // if(jSONArray.hasOwnProperty(key)){
      // console.log(`${jSONArray[key]}");
@@ -56,7 +57,7 @@ try {
     }
    const searchString = array.filter( word => word.data == 'parents');
    var len = searchString.length;
-   console.log(`MyParsed ${jSONArray}`);
+   console.log(`MyParsed ${status}`);
     
      console.log(`jSONArray ${searchString}`);
  
