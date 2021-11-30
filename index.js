@@ -58,7 +58,7 @@ try {
             for(var i in response)
                 res.push(response[i]);
        console.log(`${res}`);
-   console.log(res.filter(word => word == 'parents'))
+   console.log(`${res}.filter(word => word == 'parents')`);
   return res;
 }
  
