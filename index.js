@@ -7,51 +7,45 @@ var await = require('asyncawait/await');
 const octokitRequest = require('@octokit/request');
 
 try {
-  // `commit-count` input defined in action metadata file
+  // Input defined in action metadata file
   const commitCount = core.getInput('commit-count');
-  console.log(`Commit Count ${commitCount}`);
-  //var CommitsCounts = commitCount;
+  console.log(`Commit Count ${commitCount}`);  
   var labelName = core.getInput('LabelName');
-  console.log(`label name ${labelName}`)
-  //var labelname = labelName;
-  //core.setOutput("labelname", labelname);
-  //console.log(`Commit Count ${commitCount}`);
+  console.log(`label name ${labelName}`); 
   var comments = core.getInput('Comment');
-  //core.setOutput("comments", comments);
   console.log(`comments ${comments}`);
   var Github_Token = core.getInput('github_token');
   console.log(`Github_Token ${Github_Token}`);
   var pr_number = core.getInput('PR_Number');
   console.log(`pr_number ${pr_number}`);
-  
-   var gitHubRepository = core.getInput('GitHubRepository');
-   console.log(`gitHubRepository ${gitHubRepository}`);
- // var gitRepoOutPut = core.setOutput("gitHubRepository", gitHubRepository);
-  
+  var gitHubRepository = core.getInput('GitHubRepository');
+  console.log(`gitHubRepository ${gitHubRepository}`);
+ 
+  //Concatenate the strings
   let url="https://api.github.com/repos/";
   let repoName= `${gitHubRepository}`;
   let urlAndRepoName=url.concat("", repoName);
-  console.log(urlAndRepoName);
+ // console.log(urlAndRepoName);
   let pr_Number=`${pr_number}`;
-  console.log(pr_Number);
+  //console.log(pr_Number);
   
   var string = [ 'spray', 'spray', 'spray', 'elite']
 
   const searchString = string.filter( word => word == 'spray');
   var len = searchString.length;
   console.log(len);
- 
+
+  //Get the total commit count by PR
   async function GetCommitCountByPR() {
   
   const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`); 
     
   var string1 = JSON.stringify(response)
-    const parsed = JSON.parse(string1);
-           
-    console.log(`MyParsed ${parsed}`);
-    const searchString = parsed.filter( word => word == `parents`);
+  // const parsed = JSON.parse(string1);          
+   // console.log(`MyParsed ${parsed}`);
+   const searchString = string1.filter( word => word == 'parents');
      var len = searchString.length;
-     console.log(`${len}`);
+     console.log(`MyParsed ${len}`);
  
   return string1;
 }
