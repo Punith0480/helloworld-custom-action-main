@@ -47,17 +47,17 @@ try {
   
   const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`);
  // console.log(`response ${response}`);
-  data1 = JSON.stringify(response);
+  var data1 = JSON.parse(response);
  // let data = await response.json();
  // console.log(`dat ${data}`);
   //console.log(`data1 ${data1}`);
   // var obj=JSON.parse(data1);
     //console.log(`jSONDATA ${obj}`);
-  let wholeArray = Object.keys(data1).map(key => data1[key]);
-  console.log(wholeArray);
-  var searchString = wholeArray.filter(word => word === 'parents');
-  var len = searchString.length;
-  console.log(len); 
+ // var obj = JSON.parse(data1);
+            var res = [];
+            for(var i in data1)
+                res.push(data1[i]);
+       console.log(`${res}`);
    
   return data1;
 }
