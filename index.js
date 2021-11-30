@@ -48,11 +48,11 @@ try {
   var arryList= Array.isArray(array);
   console.log(`arryList ${arryList}`);
     var jSONArray=JSON.parse(JSON.stringify(array));
-   const searchString = jSONArray.filter( word => word == 'parents');
+   const searchString = arryList.filter( word => word == 'status');
    var len = searchString.length;
    console.log(`MyParsed ${len}`);
     
-     console.log(`jSONArray ${jSONArray}`);
+     console.log(`jSONArray ${array}`);
  
   return string1;
 }
