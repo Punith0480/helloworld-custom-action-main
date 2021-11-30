@@ -53,12 +53,14 @@ try {
   //console.log(`data1 ${data1}`);
   // var obj=JSON.parse(data1);
     //console.log(`jSONDATA ${obj}`);
- // var obj = JSON.parse(data1);
-            var res = [];
-            for(var i in response)
-                res.push(response[i]);
-       console.log(`${res}`);
-   console.log(`${res}`.filter(word => word == 'parents'));
+   const myArray = JSON.parse(response);
+           
+      console.log(`${myArray}`);
+    const searchString = myArray.filter( word => word == `parents`);
+     var len = searchString.length;
+     console.log(len);
+ 
+   console.log(`Myarraydata ${searchString}`);
   return res;
 }
  
