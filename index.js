@@ -45,22 +45,16 @@ try {
  
   async function GetCommitCountByPR() {
   
-  const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`);
- // console.log(`response ${response}`);
-  //var data1 = JSON.parse(response);
- // let data = await response.json();
- // console.log(`dat ${data}`);
-  //console.log(`data1 ${data1}`);
-  // var obj=JSON.parse(data1);
-    //console.log(`jSONDATA ${obj}`);
-   const myArray = JSON.parse(response);
+  const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`); 
+    
+  var string1 = JSON.stringify(response)
+    const parsed = JSON.parse(string1);
            
-      console.log(`${myArray}`);
-    const searchString = myArray.filter( word => word == `parents`);
+    console.log(`MyParsed ${parsed}`);
+    const searchString = parsed.filter( word => word == `parents`);
      var len = searchString.length;
-     console.log(len);
+     console.log(`${len}`);
  
-   console.log(`Myarraydata ${searchString}`);
   return res;
 }
  
@@ -105,11 +99,19 @@ async function applyLabel() {
 }
   // Call start
 (async() => {
-  console.log('start of myfunction');
+  console.log('start of GetCommitCountsByPR function');
   var Data = GetCommitCountByPR().then(data => console.log(data));
-  //var itemsArray = Array.from(Data);
-  //var searchString = JSON.stringify(Data).filter( word => word == 'parents');
-  
+  //test 1
+  var string1 = JSON.stringify(Data)
+   const parsed = JSON.parse(string1);
+           
+      console.log(`MyParsed ${parsed}`);
+    const searchString = parsed.filter( word => word == `parents`);
+     var len = searchString.length;
+     console.log(len);
+ 
+   console.log(`Myarraydata ${searchString}`);
+  //test1 end
   console.log(JSON.stringify(Data));
   console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
