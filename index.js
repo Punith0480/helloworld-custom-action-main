@@ -48,7 +48,7 @@ try {
   var arryList= Array.isArray(array);
   console.log(`arryList ${arryList}`);
     var jSONArray=JSON.parse(JSON.stringify(array));
-   const searchString = arryList.filter( word => word == 'status');
+   const searchString = array.filter( word => word == 'status');
    var len = searchString.length;
    console.log(`MyParsed ${len}`);
     
