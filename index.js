@@ -27,14 +27,8 @@ try {
   let urlAndRepoName=url.concat("", repoName);
  // console.log(urlAndRepoName);
   let pr_Number=`${pr_number}`;
-  //console.log(pr_Number);
+  //console.log(pr_Number);  
   
-  var string = [ 'spray', 'spray', 'spray', 'elite']
-
-  const searchString = string.filter( word => word == 'spray');
-  var len = searchString.length;
-  console.log(len);
-
   //Get the total commit count by PR
   async function GetCommitCountByPR() {
   
@@ -49,11 +43,11 @@ try {
   console.log(`arryList ${arryList}`);
     var jSONArray=JSON.parse(JSON.stringify(array));
     //var status= jSONArray | jq '.status'
-    for(key in jSONArray){
+    for(var key in jSONArray){
       if(jSONArray.hasOwnProperty(key)){
         console.log('property value');
         console.log(`${key}`);
-      console.log(jSONArray[key]);
+      console.log(jSONArray[key].parents);
      if(jSONArray[key] == "parents"){
      console.log('this is a parent value');
      }
