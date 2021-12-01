@@ -49,11 +49,13 @@ try {
   console.log(`arryList ${arryList}`);
     var jSONArray=JSON.parse(JSON.stringify(array));
     //var status= jSONArray | jq '.status'
-    //for(key in jSONArray){
-     // if(jSONArray.hasOwnProperty(key)){
-     // console.log(`${jSONArray[key]}");
-     // if(jSONArray[key] == "status")
-     // }
+    for(key in jSONArray){
+      if(jSONArray.hasOwnProperty(key)){
+      console.log(jSONArray[key]);
+     if(jSONArray[key] == "parents"){
+     console.log('this is a parent value');
+     }
+    }
     }
    const searchString = array.filter( word => word.data == 'parents');
    var len = searchString.length;
