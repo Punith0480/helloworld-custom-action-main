@@ -51,6 +51,7 @@ try {
     //var status= jSONArray | jq '.status'
     for(key in jSONArray){
       if(jSONArray.hasOwnProperty(key)){
+        console.log('property value');
       console.log(jSONArray[key]);
      if(jSONArray[key] == "parents"){
      console.log('this is a parent value');
