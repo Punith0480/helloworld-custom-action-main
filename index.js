@@ -43,7 +43,7 @@ try {
   console.log(`arryList ${arryList}`);
     var jSONArray=JSON.parse(JSON.stringify(array));
     //var status= jSONArray | jq '.status'
-    for(var key in jSONArray){
+    for(key in jSONArray){
       if(jSONArray.hasOwnProperty(key)){
         console.log('property value');
         console.log(`${key}`);
