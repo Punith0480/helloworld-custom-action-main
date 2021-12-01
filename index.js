@@ -37,7 +37,7 @@ try {
   //var string1 = JSON.stringify(response); 
   let string = response['data'];
   let parentCommitCountsByPR=Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length;
-  console.log(Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length);
+  //console.log(Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length);
   return parentCommitCountsByPR;
 }
  
@@ -83,8 +83,9 @@ async function applyLabel() {
   // Call start
 (async() => {
   console.log('start of GetCommitCountsByPR function');
-  var Data = GetCommitCountByPR().then(data => console.log(data));
-  console.log(JSON.stringify(Data));
+  var commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
+  console.log(JSON.stringify(commitCountByAsync));
+  if(commitCountByAsync >= `${commitCount}`){
   console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data2));
@@ -93,7 +94,7 @@ async function applyLabel() {
   console.log(JSON.stringify(Data3));
   var Data4 = applyCommentsAfterLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data4));
-  
+  }
   })();
   
   // Get the JSON webhook payload for the event that triggered the workflow
