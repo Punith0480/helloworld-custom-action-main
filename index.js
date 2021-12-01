@@ -34,31 +34,9 @@ try {
   
   const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`); 
     
-  var string1 = JSON.stringify(response)
-  // const parsed = JSON.parse(string1);          
-   // console.log(`MyParsed ${parsed}`);
-  var array= new Array();
-    array.push(response);
-  var arryList= Array.isArray(array);
-  console.log(`arryList ${arryList}`);
-    var jSONArray=JSON.parse(JSON.stringify(array));
-    //var status= jSONArray | jq '.status'
-    for(key in jSONArray){
-      if(jSONArray.hasOwnProperty(key)){
-        console.log('property value');
-        console.log(`${key}`);
-      console.log(`${jSONArray[key]}.parents`);
-     if(jSONArray[key] == "parents"){
-     console.log('this is a parent value');
-     }
-    }
-    }
-   const searchString = array.filter( word => word.data == 'parents');
-   var len = searchString.length;
-   console.log(`MyParsed ${searchString}`);
-    
-     console.log(`jSONArray ${jSONArray}`);
- 
+  var string1 = JSON.stringify(response); 
+  let string = response['data'];
+  console.log(Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length);
   return string1;
 }
  
