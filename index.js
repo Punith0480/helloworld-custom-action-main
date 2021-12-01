@@ -34,10 +34,11 @@ try {
   
   const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`); 
     
-  var string1 = JSON.stringify(response); 
+  //var string1 = JSON.stringify(response); 
   let string = response['data'];
+  let parentCommitCountsByPR=Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length;
   console.log(Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length);
-  return string1;
+  return parentCommitCountsByPR;
 }
  
   async function createLabel() {
@@ -50,8 +51,8 @@ try {
                                                                    name:  `${labelName}`,
                                                                    
                                                                   });
-    data2 = JSON.stringify(responseOfCreateLabel);
-    return data2;
+   // data2 = JSON.stringify(responseOfCreateLabel);
+    return responseOfCreateLabel;
   }        
  
 async function applyLabel() {
@@ -63,8 +64,8 @@ async function applyLabel() {
                                                                    labels: [`${labelName}`],
                                                                    
                                                                   });
-    data3 = JSON.stringify(responseOfCreateLabel);
-    return data3;
+    //data3 = JSON.stringify(responseOfCreateLabel);
+    return responseOfCreateLabel;
 }
   
  async function applyCommentsAfterLabel() {
@@ -76,8 +77,8 @@ async function applyLabel() {
                                                                  body: `${comments}`,
                                                                    
                                                                   });
-    data3 = JSON.stringify(responseOfCreateLabel);
-    return data4;
+    //data4 = JSON.stringify(responseOfCreateLabel);
+    return responseOfCreateLabel;
 }
   // Call start
 (async() => {
@@ -93,8 +94,7 @@ async function applyLabel() {
   var Data4 = applyCommentsAfterLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data4));
   
-  console.log('End of fuction');
-})();
+  })();
   
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
