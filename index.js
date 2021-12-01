@@ -52,6 +52,7 @@ try {
     for(key in jSONArray){
       if(jSONArray.hasOwnProperty(key)){
         console.log('property value');
+        console.log(`${key}`);
       console.log(jSONArray[key]);
      if(jSONArray[key] == "parents"){
      console.log('this is a parent value');
