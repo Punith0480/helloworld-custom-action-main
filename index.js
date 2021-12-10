@@ -85,7 +85,7 @@ async function applyLabel() {
   console.log('start of GetCommitCountsByPR function');
   var commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
   console.log(JSON.stringify(commitCountByAsync));
-  if(commitCountByAsync >= `${commitCount}`){
+  if(commitCountByAsync >= commitCount){
   console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data2));
@@ -94,6 +94,10 @@ async function applyLabel() {
   console.log(JSON.stringify(Data3));
   var Data4 = applyCommentsAfterLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data4));
+  }
+  else
+  {
+    console.log("commit count should be greater thn 5 thn label will apply");
   }
   })();
   
