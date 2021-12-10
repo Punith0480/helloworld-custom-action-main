@@ -84,6 +84,7 @@ async function applyLabel() {
 (async() => {
   console.log('start of GetCommitCountsByPR function');
   var commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
+  console.log(Boolean([commitCountByAsync >= commitCount]);
   console.log(JSON.stringify(commitCountByAsync));
   if(commitCountByAsync >= commitCount){
   console.log('start of Create label function');
