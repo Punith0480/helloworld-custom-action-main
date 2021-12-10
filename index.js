@@ -30,7 +30,7 @@ try {
   //console.log(pr_Number);  
   
   //Get the total commit count by PR
-  var commitCountAsyncValue="";
+  var commitCountAsyncValue;
   async function GetCommitCountByPR() {
   
   const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`); 
@@ -39,7 +39,7 @@ try {
   let string = response['data'];
   let parentCommitCountsByPR=Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length;
     commitCountAsyncValue=parentCommitCountsByPR;
-  //console.log(Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length);
+  console.log(commitCountAsyncValue);
   return parentCommitCountsByPR;
 }
  
