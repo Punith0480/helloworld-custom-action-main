@@ -36,11 +36,14 @@ try {
   const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`); 
     
   //var string1 = JSON.stringify(response); 
+    /*
   let string = response['data'];
   let parentCommitCountsByPR=Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length;
     commitCountAsyncValue=parentCommitCountsByPR;
   console.log(commitCountAsyncValue);
   return parentCommitCountsByPR;
+  */
+    return response;
 }
  
   async function createLabel() {
@@ -85,9 +88,14 @@ async function applyLabel() {
   // Call start
 (async() => {
   console.log('start of GetCommitCountsByPR function');
-  var commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
-  console.log(Boolean([JSON.stringify(commitCountByAsync) >= commitCount]));
-  console.log(`Commit AsyncCount JSON.stringify(${commitCountAsyncValue})`);
+  //var commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
+  var commitCountByAsync = GetCommitCountByPR()
+  let coomitdata = commitCountByAsync['data'];
+  let parentCommitCountsByPR=Object.getOwnPropertyNames(coomitdata[0]).filter(word => word == 'parents').length;
+  var commitCountAsyncValue=parentCommitCountsByPR;
+  console.log(commitCountAsyncValue);
+  //console.log(Boolean([JSON.stringify(commitCountByAsync) >= commitCount]));
+  //console.log(`Commit AsyncCount JSON.stringify(${commitCountAsyncValue})`);
   //if(JSON.stringify(commitCountByAsync) >= commitCount){
   if(1 >= commitCount){
   console.log('start of Create label function');
