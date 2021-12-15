@@ -30,20 +30,20 @@ try {
   //console.log(pr_Number);  
   
   //Get the total commit count by PR
-  var commitCountAsyncValue;
+  var promiseValue;
   async function GetCommitCountByPR() {
   
   const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`); 
     
   //var string1 = JSON.stringify(response); 
-    /*
+    
   let string = response['data'];
   let parentCommitCountsByPR=Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length;
-    commitCountAsyncValue=parentCommitCountsByPR;
-  console.log(commitCountAsyncValue);
+    promiseValue=parentCommitCountsByPR;
+  console.log(promiseValue);
   return parentCommitCountsByPR;
-  */
-    return response;
+  
+   // return response;
 }
  
   async function createLabel() {
@@ -88,9 +88,7 @@ async function applyLabel() {
   // Call start
 (async() => {
   console.log('start of GetCommitCountsByPR function');
-  //var commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
-  let commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
-  var promiseValue=Promise.resolve(commitCountByAsync);
+ var commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
   console.log(`commit count by Async ${promiseValue}`);
   let commitdata = commitCountByAsync['data'];
   let parentCommitCountsByPR=Object.getOwnPropertyNames(commitdata[0]).filter(word => word == 'parents').length;
