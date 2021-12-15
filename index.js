@@ -90,7 +90,8 @@ async function applyLabel() {
   console.log('start of GetCommitCountsByPR function');
   //var commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
   let commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
-  console.log(`commit count by Async ${commitCountByAsync}`);
+  var promiseValue=Promise.resolve(commitCountByAsync);
+  console.log(`commit count by Async ${promiseValue}`);
   let commitdata = commitCountByAsync['data'];
   let parentCommitCountsByPR=Object.getOwnPropertyNames(commitdata[0]).filter(word => word == 'parents').length;
   var commitCountAsyncValue=parentCommitCountsByPR;
