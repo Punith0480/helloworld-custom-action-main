@@ -89,14 +89,15 @@ async function applyLabel() {
   console.log(`commit count by Async ${commitCountAsync}`);
   console.log(commitCountAsyncValue); 
   if(commitCountAsync >= commitCount){
-  console.log('start of Create label function');
+  //console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data2));
-  console.log('start of apply label function');
+ // console.log('start of apply label function');
   var Data3 = applyLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data3));
   var Data4 = applyCommentsAfterLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data4));
+  }
   
   })();
   
