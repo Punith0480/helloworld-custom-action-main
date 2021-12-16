@@ -35,9 +35,9 @@ try {
   
   const response = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`); 
     
-  //var string1 = JSON.stringify(response); 
+  console.log(response); 
     
-  let string = response['data'];
+  //let string = response['data'];
   let parentCommitCountsByPR=Object.getOwnPropertyNames(response.data[0].parents).filter(word => word == 'sha').length;
   promiseValue=parentCommitCountsByPR;
   console.log(parentCommitCountsByPR);    
