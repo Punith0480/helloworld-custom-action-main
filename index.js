@@ -36,7 +36,7 @@ try {
   const responseObject = await octokitRequest.request(`GET ${urlAndRepoName}/pulls/${pr_Number}/commits`); 
     
   console.log(responseObject); 
-  Object.keys(responseObject['data']).foreach(commitId => {
+  Object.keys(responseObject['data']).forEach(commitId => {
      
    console.log(responseObject.data[commitId].sha);
     commitCountAsync++;
