@@ -97,12 +97,12 @@ async function applyLabel() {
   //console.log(commitCountByAsync); 
   if(commitCountAsync >= commitCount){
   //console.log('start of Create label function');
-  var Data2 = await createLabel().then(data => console.log(data));
+  var Data2 = createLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data2));
  // console.log('start of apply label function');
-  var Data3 = await applyLabel().then(data => console.log(data));
+  var Data3 = applyLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data3));
-  var Data4 = await applyCommentsAfterLabel().then(data => console.log(data));
+  var Data4 = applyCommentsAfterLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data4));
   }
   
