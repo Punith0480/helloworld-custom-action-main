@@ -43,12 +43,14 @@ try {
   });
   console.log(commitCountAsync);  
     
-  return new Promise((resolve) => {
+ /* return new Promise((resolve) => {
     setTimeout(() => {
       resolve({ action: `${commitCountAsync}` });
     }, 1000);
   });
-    
+    */
+   
+   return commitCountAsync
   }
  
   async function createLabel() {
@@ -90,17 +92,17 @@ async function applyLabel() {
   // Call start
 (async() => {
   
- var commitCountByAsync = GetCommitCountByPR().then(response => console.log(response.action));
+ var commitCountByAsync = await GetCommitCountByPR().then(response => console.log(response));
   console.log(`commit count by Async ${commitCountByAsync}`);
   //console.log(commitCountByAsync); 
   if(commitCountByAsync >= commitCount){
   //console.log('start of Create label function');
-  var Data2 = createLabel().then(data => console.log(data));
+  var Data2 = await createLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data2));
  // console.log('start of apply label function');
-  var Data3 = applyLabel().then(data => console.log(data));
+  var Data3 = await applyLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data3));
-  var Data4 = applyCommentsAfterLabel().then(data => console.log(data));
+  var Data4 = await applyCommentsAfterLabel().then(data => console.log(data));
   console.log(JSON.stringify(Data4));
   }
   
