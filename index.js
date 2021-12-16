@@ -38,19 +38,12 @@ try {
   //var string1 = JSON.stringify(response); 
     
   let string = response['data'];
-  let parentCommitCountsByPR=Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length;
-    promiseValue=parentCommitCountsByPR;
-  console.log(string);
-    Object.keys(string).foreach(dataList => {
-      
-      console.log("copying datalist " + dataList + "...");
-      
-    });
-    
+  let parentCommitCountsByPR=Object.getOwnPropertyNames(response.data[0].parents).filter(word => word == 'sha').length;
+  promiseValue=parentCommitCountsByPR;
+  console.log(parentCommitCountsByPR);    
   return parentCommitCountsByPR;
-  
-   // return response;
-}
+    
+  }
  
   async function createLabel() {
    // https://api.github.com/repos/Punith0480/helloworld-action-main
