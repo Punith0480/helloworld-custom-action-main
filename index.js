@@ -41,8 +41,13 @@ try {
    console.log(responseObject.data[commitId].sha);
     commitCountAsync++;
   });
-  console.log(commitCountAsync);     
-  return commitCountAsync;
+  console.log(commitCountAsync);  
+    
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ action: `${commitCountAsync}` });
+    }, 1000);
+  });
     
   }
  
@@ -85,9 +90,9 @@ async function applyLabel() {
   // Call start
 (async() => {
   
- var commitCountByAsync = GetCommitCountByPR().then(data => console.log(data));
+ var commitCountByAsync = GetCommitCountByPR().then(response => console.log(response.action));
   console.log(`commit count by Async ${commitCountByAsync}`);
-  console.log(commitCountByAsync); 
+  //console.log(commitCountByAsync); 
   if(commitCountByAsync >= commitCount){
   //console.log('start of Create label function');
   var Data2 = createLabel().then(data => console.log(data));
