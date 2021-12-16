@@ -40,7 +40,7 @@ try {
   let string = response['data'];
   let parentCommitCountsByPR=Object.getOwnPropertyNames(string[0]).filter(word => word == 'parents').length;
     promiseValue=parentCommitCountsByPR;
-  console.log(promiseValue);
+  console.log(string);
     Object.keys(string).foreach(dataList => {
       
       console.log("copying datalist " + dataList + "...");
